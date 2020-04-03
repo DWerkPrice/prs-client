@@ -1,0 +1,30 @@
+<app-menu></app-menu> 
+<Label>Request Line List</Label> |
+<a routerLink="/requestlines/create">Create</a> |
+<div class="component">
+    <table class="table table-sm">
+        <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Total</th>
+            <th>Actions</th>
+        </tr>
+        <tr *ngFor="let rl of requestlines">
+            <div *ngif="
+                rl.user.username == logUser
+                || rl.user.isAdmin == vldAdmin
+                || rl.user.isReviewer == vldReviewer")>
+                <td>{{rl.productId !=null ? rl.product.name: "Product Not found"}}</td>
+                <td>{{rl.quantity}}</td>
+                <td>{{rl.productId !=null ? rl.product.price: "Price Not found"}}</td>
+                <td>{{rl.productId !=null ? (rl.product.price*rl.quantity): "Price not found"}}</td>
+                <td>
+                    <a routerLink="/requestline/edit/{{rl.id}}">Edit</a> |
+                    <a routerLink="/requestline/remove/{{rl.id}}">Remove</a>
+                </td>
+            </div>
+        </tr>
+    </table>
+</div>
+

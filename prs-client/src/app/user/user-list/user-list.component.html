@@ -1,0 +1,28 @@
+<app-menu></app-menu>
+<label>User List </label> |
+<a routerLink="/users/create">Create</a>
+<input [(ngModel)]="searchCriteria" type="text" placeholder="Search">
+<div class="component">
+    <table class="table table-sm">
+        <tr>
+            <th (click)="sortByColumn('lastname')">Name<div (class) = "sortArrow('lastname')"></div></th>
+            <th (click)="sortByColumn('phone')">Phone</th>
+            <th (click)="sortByColumn('email')">Email</th>
+            <th (click)="sortByColumn('isReviewer')">IsReviewer</th>
+            <th (click)="sortByColumn('isAdmin')">IsAdmin</th>
+        </tr>
+        <tr *ngFor="let u of users | userSearch: searchCriteria | sort: this.sortColumn">
+            <td>{{u.firstname}} {{u.lastname}}</td>
+            <td>{{u.phone}}</td>
+            <td>{{u.email}}</td>
+            <td>{{u.isReviewer}}</td>
+            <td>{{u.isAdmin}}</td>
+            <td>
+                <a routerLink="/users/detail/{{u.id}}">Detail</a> |
+                <a routerLink="/users/edit/{{u.id}}">Edit</a> |
+                <a>{{this.sortColumn}}</a>
+            </td>
+        </tr>
+    </table>
+</div>
+

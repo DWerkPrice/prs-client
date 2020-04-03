@@ -1,0 +1,60 @@
+<app-menu></app-menu>
+<div class="component">
+
+    <table class="table table-sm table-striped">
+
+        <tr>
+            <td>Id</td>
+            <td>
+                <input [(ngModel)]="request.id" type="text" disabled>
+            </td>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td>
+                <input [(ngModel)]="request.description" type="text"  disabled>
+            </td>
+        </tr>
+        <tr>
+            <td>Justification</td>
+            <td>
+                <input [(ngModel)]="request.justification" type="text"  disabled>
+            </td>
+        </tr>
+        <tr>
+            <td>Rejection Reason</td>
+            <td>
+                <input [(ngModel)]="request.rejectionReason" type="text" disabled>
+            </td>
+        </tr>
+        <tr>
+            <td>Delivery Mode</td>
+            <td>
+                <input [(ngModel)]="request.deliveryMode" type="text" disabled>
+            </td>
+        </tr>
+        <tr>
+            <td>Status</td>
+            <td>
+                <input [(ngModel)]="request.status" type="text" disabled>
+            </td>
+        </tr>
+        <tr>
+            <td>Total</td>
+            <td>
+                <input [(ngModel)]="request.total" type="number" disabled>
+            </td>
+        </tr>
+        <tr>
+            <td>UserName:</td>
+            <td>
+                <input [ngModel]="request.user.username" type="text"  disabled>
+        </tr>
+        <tr>
+            <td>
+                <button (click)="delete()" class="btn btn-danger">Delete</button>
+            </td>
+        </tr>
+    </table>
+
+</div>

@@ -1,0 +1,7 @@
+<nav class="menu">
+    <span *ngFor="let m of menu">
+        <a routerLink="{{m.route}}" title="{{m.tooltip}}">{{m.display}}</a>
+        <span> | </span>
+    </span>
+    <object width="200" align="right">{{loguser}}</object>
+</nav>
