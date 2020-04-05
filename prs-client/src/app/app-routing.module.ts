@@ -26,8 +26,9 @@ import { RequestlineEditComponent } from './requestline/requestline-edit/request
 
 
 const routes: Routes = [
-//  {path:"", redirectTo:"/users/list", pathMatch: "full"},
-  {path:"", component: UserLoginComponent},
+ // {path:"", redirectTo:"/requests/list", pathMatch: "full"},
+ 
+ {path:"", component: UserLoginComponent},
   {path:"users/list",component: UserListComponent},
   {path: "users/login/:username/:password", component: UserLoginComponent},
   {path:"users/detail/:id",component: UserDetailComponent},

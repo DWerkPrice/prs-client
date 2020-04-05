@@ -31,6 +31,7 @@ import { RequestlineEditComponent } from './requestline/requestline-edit/request
 import { RequestlineCreateComponent } from './requestline/requestline-create/requestline-create.component';
 import { RequestlineDetailComponent } from './requestline/requestline-detail/requestline-detail.component';
 import { UserLoginComponent } from './user/user-login/user-login.component';
+import { SortdPipe } from './pipes/sortd.pipe';
 
 
 @NgModule({
@@ -62,7 +63,8 @@ import { UserLoginComponent } from './user/user-login/user-login.component';
     RequestlineListComponent,
     RequestlineEditComponent,
     RequestlineCreateComponent,
-    RequestlineDetailComponent
+    RequestlineDetailComponent,
+    SortdPipe
   ],
   imports: [
     BrowserModule,

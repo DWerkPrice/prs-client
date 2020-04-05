@@ -11,6 +11,10 @@ import { User } from './user/user.class';
 
 export class SystemService {
     loggedInUser: User = null;
+    reverseSort:  boolean = false;
+    sortColumn: string = "";
+    sortDirection: string = "";
+    requestId: number = 0;
 //    login(username: string , password: string): Observable<User>{
 //    return this.http.get(`${url}/login/${username}/${password}`) as Observable<User>;
   } 

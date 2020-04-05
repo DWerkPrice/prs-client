@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { RequestlineService } from '../requestline.service';
-import { Requestline } from '../requestline.class';
+import { RequestService } from 'src/app//request/request.service';
 import { SystemService } from 'src/app/system.service';
-import { User } from 'src/app/user/user.class';
-
-
+import { Router, ActivatedRoute } from '@angular/router';
+import { Request } from 'src/app/request/request.class';
+import { RequestLine } from '../requestline.class';
 
 
 @Component({
@@ -12,26 +11,41 @@ import { User } from 'src/app/user/user.class';
   templateUrl: './requestline-list.component.html',
   styleUrls: ['./requestline-list.component.css']
 })
+
 export class RequestlineListComponent implements OnInit {
-  user: User[] = [];
-  requestlines: Requestline[] = [];
-  logUser = this.systemsvc.loggedInUser.username;
-  vldAdmin = this.systemsvc.loggedInUser.isAdmin;
-  vldReviewer = this.systemsvc.loggedInUser.isReviewer;
+
+  request: Request;
+  requestLine = new RequestLine();
+ 
+
+  searchCriteria: string = '';
   
+
   
+    
+  
+  //this.router.navigateByUrl("/requests/list"); 
+    
+
 
   constructor(
-    private requestline : RequestlineService,
-    private systemsvc : SystemService
-    ) { }
+//    private route: ActivatedRoute,
+    private systemsvc: SystemService,
+    private requestsvc: RequestService,
+//    private router: Router
+  ) { }
 
   ngOnInit(): void {
-    this.requestline.list().subscribe(
+    let id = this.systemsvc.requestId;
+    this.requestsvc.get(id).subscribe(
       res => {
-        this.requestlines = res;
-        console.debug("Requestline-list:",res);}
-      ,err => {console.error(err);}
+        this.request = res;
+        console.debug("Request:", res);
+      },
+      err => {
+      console.error("Error debug request get",err);
+      }
     );
   }
+
 }

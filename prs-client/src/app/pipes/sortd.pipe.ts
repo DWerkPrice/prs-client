@@ -1,9 +1,9 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'sort'
+  name: 'sortd'
 })
-export class SortPipe implements PipeTransform {
+export class SortdPipe implements PipeTransform {
 
   transform(items: any[], sortBy: string): any[] {//first column is data coming in second is column to sort by
     if(items == null || items.length ==0) return items;
@@ -11,7 +11,7 @@ export class SortPipe implements PipeTransform {
       let x = this.setValue(a[sortBy]);
       let y = this.setValue(b[sortBy]);
       if(x === y) return 0;
-      return (x < y) ? -1 : 1; 
+      return (x > y) ? -1 : 1; 
     };
 
     return items.sort(sortFn);

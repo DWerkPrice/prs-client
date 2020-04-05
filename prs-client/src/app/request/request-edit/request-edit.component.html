@@ -49,9 +49,7 @@
         <tr>
             <td>UserName</td>
             <td>
-                <select [(ngModel)]="request.userId">
-                    <option *ngFor="let u of users" value="{{u.id}}">{{u.username}}</option>
-                </select>    
+                <inupt [(ngModel)]=request.user.username" type="text disabled">
             </td>
         </tr>
         <tr>

@@ -5,24 +5,41 @@
 <div class="component">
     <table class="table table-sm">
         <tr>
-            <th (click)="sortByColumn('lastname')">Name<div (class) = "sortArrow('lastname')"></div></th>
+            <th (click)="sortByColumn('lastname')">Name</th>
             <th (click)="sortByColumn('phone')">Phone</th>
             <th (click)="sortByColumn('email')">Email</th>
             <th (click)="sortByColumn('isReviewer')">IsReviewer</th>
             <th (click)="sortByColumn('isAdmin')">IsAdmin</th>
         </tr>
-        <tr *ngFor="let u of users | userSearch: searchCriteria | sort: this.sortColumn">
+        
+        <div *ngIf = "sortdCode; else elseTemplate">
+            <tr *ngFor="let u of users | userSearch: searchCriteria | sort: sortCol">
             <td>{{u.firstname}} {{u.lastname}}</td>
             <td>{{u.phone}}</td>
             <td>{{u.email}}</td>
             <td>{{u.isReviewer}}</td>
             <td>{{u.isAdmin}}</td>
             <td>
-                <a routerLink="/users/detail/{{u.id}}">Detail</a> |
-                <a routerLink="/users/edit/{{u.id}}">Edit</a> |
-                <a>{{this.sortColumn}}</a>
+                  <a routerLink="/users/detail/{{u.id}}">Detail</a> |
+                  <a routerLink="/users/edit/{{u.id}}">Edit</a> |
+                  <a>{{this.sortCol}}</a>
             </td>
-        </tr>
+         </tr>
+        </div>
+        <ng-template #elseTemplate>
+            <tr *ngFor="let u of users | userSearch: searchCriteria | sortd: sortCol">
+            <td>{{u.firstname}} {{u.lastname}}</td>
+            <td>{{u.phone}}</td>
+            <td>{{u.email}}</td>
+            <td>{{u.isReviewer}}</td>
+            <td>{{u.isAdmin}}</td>
+            <td>
+                  <a routerLink="/users/detail/{{u.id}}">Detail</a> |
+                  <a routerLink="/users/edit/{{u.id}}">Edit</a> |
+                  <a>{{this.sortCol}}</a>
+            </td>
+         </tr>
+         </ng-template>
+
     </table>
 </div>
-

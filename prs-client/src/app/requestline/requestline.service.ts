@@ -1,29 +1,29 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { Requestline } from './requestline.class';
+import { RequestLine } from './requestline.class';
 
 const url: string = "http://localhost:5000/api/requestlines";
 
 @Injectable({
   providedIn: 'root'
 })
-export class RequestlineService {
+export class RequestLineService {
 
-  list(): Observable<Requestline[]>{
-    return this.http.get(`${url}`) as Observable<Requestline[]>;
+  list(): Observable<RequestLine[]>{
+    return this.http.get(`${url}`) as Observable<RequestLine[]>;
   }
-  get(id: any): Observable<Requestline>{
-    return this.http.get(`${url}/${id}`) as Observable<Requestline>;
+  get(id: any): Observable<RequestLine>{
+    return this.http.get(`${url}/${id}`) as Observable<RequestLine>;
   }
-  create(requestline: Requestline): Observable<Requestline>{ // added this function
-    return this.http.post(`${url}`, requestline) as Observable<Requestline>;
+  create(requestLine: RequestLine): Observable<RequestLine>{ // added this function
+    return this.http.post(`${url}`, requestLine) as Observable<RequestLine>;
   }
-  change(requestline: Requestline): Observable<any>{ // added this function
-    return this.http.put(`${url}/${requestline.id}`, requestline) as Observable<Requestline>;
+  change(requestLine: RequestLine): Observable<any>{ // added this function
+    return this.http.put(`${url}/${requestLine.id}`, requestLine) as Observable<RequestLine>;
   }
-  remove(requestline: Requestline): Observable<any>{ // added this function
-    return this.http.delete(`${url}/${requestline.id}`) as Observable<any>;
+  remove(requestLine: RequestLine): Observable<any>{ // added this function
+    return this.http.delete(`${url}/${requestLine.id}`) as Observable<any>;
   }
   constructor(
     private http: HttpClient)
