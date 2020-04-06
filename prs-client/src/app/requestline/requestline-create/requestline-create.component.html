@@ -2,38 +2,25 @@
 <div class="component">
     <table class="table table-striped table-sm">
 
-
-<!--
-        <tr>
-            <td>Vendor</td>
-            <td>
-                <select [(ngModel)]="product.vendorId">
-                    <option *ngFor= "let v of vendors" value="{{v.id}}">{{v.name}}</option>
-                </select>
-            </td>
-        </tr>
-    -->
-
-
-
-        <tr>
+       <tr>
             <td>Product</td>
             <td>
-                <select [(ngModel)]="products.productId">
-                    <option #ngFor="let p of products" value="{{p.id}}">{{p.name}}</option>
-                </select>
+<!--                 <input [(ngModel)]="requestLine.productId" type="number" size="5">-->
+               <select [(ngModel)]="requestLine.productId">
+                    <option *ngFor="let p of products" value="{{p.id}}">{{p.name}}</option>
+                    <option value=""></option>
+                </select> 
             </td>
-        </tr>
+        </tr> 
         <tr>
             <td>Quantity</td>
             <td>
-                <input [(ngModel)]="requestLine.quantity" type="text" size="10" >
+                <input [(ngModel)]="requestLine.quantity" type="number" size="5" >
             </td>
         </tr>
         <tr>
-            <td></td>
             <td>
-                <input [(ngModel)]="requestLine.request.id" type="text" size="10" disabled>
+                <input [(ngModel)]="this.requestLine.requestId" type="text" size="10" disabled>
             </td>
         </tr>
         <tr>

@@ -1,5 +1,5 @@
 <app-menu></app-menu> 
-<a routerLink="/requestline`s/create">Create</a> |
+<a routerLink="/requestlines/create">Create</a> |
 <Label>Requestline List </Label> 
         <div class="component">
         <table class="table table-sm">
@@ -31,10 +31,13 @@
                 <td>{{rl.product.price}}</td>
                 <td>{{rl.product.price*rl.quantity | currency}}</td>
                 <td>
-                    <a routerLink="/requestline/edit/{{rl.id}}">Edit</a> |
-                    <a routerLink="/requestline/remove/{{rl.id}}">Remove</a>
+                    <a routerLink="/requestlines/edit/{{rl.id}}">Edit</a> |
+                    <button (click)="delRequestLine(rl)" class="btn btn-link">Remove</button>
+                <!--    <a (click)="delRequestLine(rl.id)" style="color:rgb(0, 121, 221);">Remove</a>
+                     <a routerLink="/requestlines/remove/{{rl.id}}">Remove</a> -->
                 </td>
         </tr>
+   
     </table>
 </div>  
 

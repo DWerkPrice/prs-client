@@ -1,1 +1,27 @@
-<p>requestline-edit works!</p>
+<app-menu></app-menu>
+<div class="component">
+
+    <table class="table table-sm table-striped">
+        <tr>
+            <td>Product</td>> 
+            <td>
+                <select [(ngModel)]="requestline.productId">
+                    <option *ngFor="let p of products" value="{{p.id}}">{{p.name}}</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Quantity</td>
+            <td>
+                <input [(ngModel)]="requestline.quantity" type="number" >
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button (click)="save()" class = "btn btn-danger">Save</button>
+            </td>
+        </tr>
+    </table>
+
+</div>
+

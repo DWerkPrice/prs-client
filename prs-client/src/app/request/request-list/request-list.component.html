@@ -10,7 +10,7 @@
                 <th>Justification</th>
                 <th>DeliveryMode</th>
                 <th>Status</th>
-                <th>Total</th>
+                <th class="row_data">Total</th>
                 <th>User</th>
             </tr>
             <tr *ngFor="let r of requests | requestSearch: searchCriteria" > 
@@ -19,7 +19,7 @@
                 <td>{{r.justification}}</td>
                 <td>{{r.deliveryMode}}</td>
                 <td>{{r.status}}</td>
-                <td>{{r.total}}</td>
+                <td class="row_data">{{r.total | currency}}</td>
                 <td>{{r.userId != null ? r.user.username: "Invalid UserId"}}</td>
                 <td>
                     <a routerLink="/requests/detail/{{r.id}}">Detail</a> |
