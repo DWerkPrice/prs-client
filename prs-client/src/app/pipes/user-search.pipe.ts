@@ -16,6 +16,8 @@ export class UserSearchPipe implements PipeTransform {
        || (user.username.toLowerCase().includes(criteria))
        || (user.firstname.toLowerCase().includes(criteria))
        || (user.lastname.toLowerCase().includes(criteria))
+       || (user.phone.toLowerCase().includes(criteria))
+       || (user.email.toLowerCase().includes(criteria))
      ){
         selUsers.push(user);
      }

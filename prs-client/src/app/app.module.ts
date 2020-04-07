@@ -32,11 +32,16 @@ import { RequestlineCreateComponent } from './requestline/requestline-create/req
 import { RequestlineDetailComponent } from './requestline/requestline-detail/requestline-detail.component';
 import { UserLoginComponent } from './user/user-login/user-login.component';
 import { SortdPipe } from './pipes/sortd.pipe';
+import { PrsAboutComponent } from './prs/prs-about/prs-about.component';
+import { PrsHomeComponent } from './prs/prs-home/prs-home.component';
+import { RequestReviewComponent } from './request/request-review/request-review.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    PrsHomeComponent,
+    PrsAboutComponent,
     UserListComponent,
     UserLoginComponent,
     UserDetailComponent,
@@ -59,12 +64,16 @@ import { SortdPipe } from './pipes/sortd.pipe';
     RequestDetailComponent,
     RequestEditComponent,
     RequestCreateComponent,
+    RequestReviewComponent,
     RequestSearchPipe,
     RequestlineListComponent,
     RequestlineEditComponent,
     RequestlineCreateComponent,
     RequestlineDetailComponent,
-    SortdPipe
+    SortdPipe,
+    PrsAboutComponent,
+    PrsHomeComponent,
+    RequestReviewComponent
   ],
   imports: [
     BrowserModule,

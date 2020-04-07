@@ -3,12 +3,7 @@
 
     <table class="table table-sm table-striped">
 
-        <tr>
-            <td>Id</td>
-            <td>
-                <input [(ngModel)]="request.id" type="text" disabled>
-            </td>
-        </tr>
+       
         <tr>
             <td>Description</td>
             <td>
@@ -21,12 +16,12 @@
                 <input [(ngModel)]="request.justification" type="text" >
             </td>
         </tr>
-        <tr>
+ <!--       <tr>
             <td>Rejection Reason</td>
             <td>
-                <input [(ngModel)]="request.rejectionReason" type="text" >
+                <input [(ngModel)]="request.rejectionReason" type="text" disabled>
             </td>
-        </tr>
+        </tr> -->
         <tr>
             <td>Delivery Mode</td>
             <td>
@@ -48,10 +43,11 @@
         <tr>
             <td>UserName</td>
             <td>
-                <select [(ngModel)]="request.userId">
+                <input [(ngModel)]="logusername" type="text" disabled>
+<!--                <select [(ngModel)]="request.userId">
                     <option *ngFor="let u of users" value="{{u.id}}">{{u.username}}</option>
                     <option value=""></option>
-                </select>    
+                </select>    -->
             </td>
         </tr>
         <tr>

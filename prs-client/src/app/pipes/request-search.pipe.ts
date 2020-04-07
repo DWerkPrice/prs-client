@@ -14,15 +14,16 @@ export class RequestSearchPipe implements PipeTransform {
     for(let request of requests) {
       if(
         request.id.toString().includes(criteria)
-          || request.description.toLowerCase().includes(criteria)
-          || request.justification.toLowerCase().includes(criteria)
-          || request.rejectionReason.toLowerCase().includes(criteria)
-          || request.deliveryMode.toLowerCase().includes(criteria)
-          || request.status.toLowerCase().includes(criteria)
-          || (request.userId != null && request.user.username.toLowerCase().includes(criteria))
-      ) {
-      selRequests.push(request);
-     }
+          || (request.description.toLowerCase().includes(criteria))
+          || (request.justification.toLowerCase().includes(criteria))
+          || (request.rejectionReason.toLowerCase().includes(criteria))
+          || (request.deliveryMode.toLowerCase().includes(criteria))
+          || (request.status.toLowerCase().includes(criteria))
+          || (request.user.username.toLowerCase().includes(criteria))
+//          || (request.userId != null && request.user.username.toLowerCase().includes(criteria))
+      ){
+         selRequests.push(request);
+      }
     }
     return selRequests;
   }

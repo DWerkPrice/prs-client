@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { PrsHomeComponent} from './prs/prs-home/prs-home.component';
+import { PrsAboutComponent} from './prs/prs-about/prs-about.component';
 
 import { UserListComponent } from './user/user-list/user-list.component';
 import { UserLoginComponent } from './user/user-login/user-login.component';
@@ -16,6 +18,7 @@ import { ProductDetailComponent } from './product/product-detail/product-detail.
 import { ProductEditComponent } from './product/product-edit/product-edit.component';
 import { RequestCreateComponent } from './request/request-create/request-create.component';
 import { RequestListComponent } from './request/request-list/request-list.component';
+import { RequestReviewComponent } from './request/request-review/request-review.component';
 import { RequestDetailComponent } from './request/request-detail/request-detail.component';
 import { RequestEditComponent } from './request/request-edit/request-edit.component';
 import { RequestlineListComponent } from './requestline/requestline-list/requestline-list.component';
@@ -28,7 +31,9 @@ import { RequestlineEditComponent } from './requestline/requestline-edit/request
 const routes: Routes = [
  // {path:"", redirectTo:"/requests/list", pathMatch: "full"},
  
- {path:"", component: UserLoginComponent},
+  {path:"", component: UserLoginComponent},
+  {path:"prs/home",component: PrsHomeComponent},
+  {path:"prs/about",component: PrsAboutComponent},
   {path:"users/list",component: UserListComponent},
   {path: "users/login/:username/:password", component: UserLoginComponent},
   {path:"users/detail/:id",component: UserDetailComponent},
@@ -43,6 +48,7 @@ const routes: Routes = [
   {path:"products/create",component: ProductCreateComponent},
   {path:"products/edit/:id",component: ProductEditComponent},
   {path:"requests/list",component: RequestListComponent},
+  {path:"requests/Review",component: RequestReviewComponent},
   {path:"requests/detail/:id",component: RequestDetailComponent},
   {path:"requests/create",component: RequestCreateComponent},
   {path:"requests/edit/:id",component: RequestEditComponent},

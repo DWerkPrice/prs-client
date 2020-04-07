@@ -3,12 +3,7 @@
 
     <table class="table table-sm table-striped">
 
-        <tr>
-            <td>Id</td>
-            <td>
-                <input [(ngModel)]="request.id" type="text" disabled>
-            </td>
-        </tr>
+       
         <tr>
             <td>Description</td>
             <td>
@@ -52,7 +47,18 @@
         </tr>
         <tr>
             <td>
-                <button (click)="delete()" class="btn btn-danger">Delete</button>
+                <button (click)="review()" class="btn btn-primary">Review</button> |
+                <a routerLink="/requests/edit/{{request.id}}" class="btn btn-warning" >Edit</a> |
+    <!--            <button routerLink="/link" (click)="edit()" class="btn btn-warning">Edit</button>|
+       <tr>
+            <td>
+                
+            </td>
+        </tr>-->
+        <button (click)="VerifyDelete()" class = "btn btn-danger">Delete</button>
+        <button [hidden]="isHidden" (click)="delete()" class = "btn btn-danger">| Verify Delete</button>
+        <a routerLink="/requests/list" >Return to list</a> |  
+  <!--              <button (click)="delete()" class="btn btn-danger">Delete</button> -->
             </td>
         </tr>
     </table>
