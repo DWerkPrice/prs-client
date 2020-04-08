@@ -14,6 +14,12 @@ export class VendorSearchPipe implements PipeTransform {
      if(vendor.id.toString().includes(criteria)
        || (vendor.code.toLowerCase().includes(criteria))
        || (vendor.name.toLowerCase().includes(criteria))
+       || (vendor.address.toLowerCase().includes(criteria))
+       || (vendor.city.toLowerCase().includes(criteria))
+       || (vendor.state.toLowerCase().includes(criteria))
+       || (vendor.zip.toLowerCase().includes(criteria))
+       || (vendor.phone.toLowerCase().includes(criteria))
+       || (vendor.email.toLowerCase().includes(criteria))
      ){
         selVendors.push(vendor);
      }

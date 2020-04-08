@@ -12,6 +12,11 @@ import { Product } from '../product.class';
 export class ProductDetailComponent implements OnInit {
 
   product: Product = new Product();
+  isHidden: boolean = true;
+
+  VerifyDelete() {
+    this.isHidden = false;
+  }
 
   delete(): void {
     this.productsvc.remove(this.product).subscribe(

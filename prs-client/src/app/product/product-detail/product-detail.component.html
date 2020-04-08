@@ -2,12 +2,6 @@
 <div class="component">
     <table class="table table-striped table-sm">
         <tr>
-            <th>Id:</th>
-            <td>
-                <input [(ngModel)]="product.id" type="text" size="10" disabled>
-            </td>
-        </tr>
-        <tr>
             <th>PartNbr:</th>
             <td>
                 <input [(ngModel)]="product.partNbr" type="text" size="10" disabled>
@@ -50,9 +44,10 @@
         </tr>
         <tr>
             <td colspan="2">
-                <button (click)="delete()" class = "btn btn-danger">Delete</button>
+                <button (click)="VerifyDelete()" class = "btn btn-danger">Delete</button>|
+                <button [hidden]="isHidden" (click)="delete()" class = "btn btn-danger">Verify Delete</button>  
             </td>
-        </tr>
+        </tr>>
     </table>
 </div>
 

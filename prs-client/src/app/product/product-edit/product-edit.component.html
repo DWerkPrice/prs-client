@@ -37,6 +37,14 @@
               <input [(ngModel)]="product.photoPath" type="text" size="20" >
             </td>
         </tr>
+        <tr>
+            <td style="font-weight:bold" >Vendor</td>
+            <td>
+                <select [(ngModel)]="product.vendorId">
+                    <option *ngFor= "let v of vendors" value="{{v.id}}">{{v.name}}</option>
+                </select>
+            </td>
+        </tr>
 <!--          <tr>
             <td>Vendor</td>
             <td>
@@ -44,7 +52,7 @@
                     <option *ngFor= "let v of vendors" value="{{v.id}}">{{v.name}}</option>
                 </select>
             </td>
-        </tr> -->
+        </tr>
       <tr *ngIf="product.vendor">
             <td>Vendor:</td>
             <td>
@@ -55,7 +63,7 @@
             <td>
                 <input value="Vendor Undefined" type="text"  >
             </td>
-        </tr>
+        </tr> -->
         <tr>
             <td colspan="2">
                 <button (click)="save()" class = "btn btn-danger">Save</button>

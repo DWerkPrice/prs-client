@@ -3,6 +3,7 @@ import { User } from '../user.class';
 import { SystemService } from 'src/app/system.service';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
+import { ThrowStmt } from '@angular/compiler';
 
 
 @Component({
@@ -18,6 +19,7 @@ export class UserLoginComponent implements OnInit {
     
     this.usersvc.login(this.user.username, this.user.password ).subscribe(
       res => {
+         if(res == null) return this.message = "Username/Password not found";
          this.systemsvc.loggedInUser = res;
          console.debug("User:", res);
          this.router.navigateByUrl("/requests/list");
@@ -26,7 +28,6 @@ export class UserLoginComponent implements OnInit {
         this.message = "UserName/PassWord not found";       
         console.error("Invalid", err);
         this.systemsvc.loggedInUser = null;
-        this.router.navigateByUrl("/users/login")
         }
   );
   }
@@ -39,6 +40,8 @@ export class UserLoginComponent implements OnInit {
   }
 
 }
+  
+
   
 
   

@@ -5,32 +5,64 @@
 <div class="component">
     <table class="table table-sm">
         <tr>
-            <th>Id</th>
-            <th>Code</th>
-            <th>Name</th>
-            <th>Address</th>
-            <th>City</th>
-            <th>State</th>
-            <th>Zip</th>
-            <th>Phone</th>
-            <th>Email</th>
+            <th (click)="sortByColumn('code')">Code</th>
+            <th (click)="sortByColumn('name')">Name</th>
+            <th (click)="sortByColumn('address')">Address</th>
+            <th (click)="sortByColumn('city')">City</th>
+            <th (click)="sortByColumn('state')">State</th>
+            <th (click)="sortByColumn('zip')">Zip</th>
+            <th (click)="sortByColumn('phone')">Phone</th>            
+            <th (click)="sortByColumn('email')">Email</th>
         </tr>
-        <tr *ngFor="let v of vendors | vendorSearch: searchCriteria">
-            <td>{{v.id}}</td>
-            <td>{{v.code}}</td>
-            <td>{{v.name}}</td>
-            <td>{{v.address}}</td>
-            <td>{{v.city}}</td>
-            <td>{{v.state}}</td>
-            <td>{{v.zip}}</td>
-            <td>{{v.phone}}</td>
-            <td>{{v.email}}</td>
+        <div *ngIf = "sortdCode; else elseTemplate">
+             <tr *ngFor="let v of vendors | vendorSearch: searchCriteria | sort: sortCol">
+                <td>{{v.code}}</td>
+                <td>{{v.name}}</td>
+                <td>{{v.address}}</td>
+                <td>{{v.city}}</td>
+                <td>{{v.state}}</td>
+                <td>{{v.zip}}</td>
+                <td>{{v.phone}}</td>
+                <td>{{v.email}}</td>
+                <td>
+                     <a routerLink="/vendors/detail/{{v.id}}">Detail</a> |
+                     <a routerLink="/vendors/edit/{{v.id}}">Edit</a>
+                 </td>
+              </tr>
+        </div>
+<!--        <div *ngIf = "sortdCode; else elseTemplate">
+                <tr *ngFor="let v of vendors | vendorSearch: searchCriteria | sort: sortCol">
+                <td>{{v.code}}</td>
+                 <td>{{v.name}}</td>
+                <td>{{v.address}}</td>
+                <td>{{v.city}}</td>
+                <td>{{v.state}}</td>
+                <td>{{v.zip}}</td>
+                <td>{{v.phone}}</td>
+                <td>{{v.email}}</td>
+                <td>
+                    <a routerLink="/vendors/detail/{{v.id}}">Detail</a> |
+                    <a routerLink="/vendors/edit/{{v.id}}">Edit</a>
+                </td>
+            </tr>
+        </div>-->
+        <ng-template #elseTemplate >
+            <tr *ngFor="let v of vendors | vendorSearch: searchCriteria | sortd: sortCol">
+                <td>{{v.code}}</td>
+                <td>{{v.name}}</td>
+                 <td>{{v.address}}</td>
+                <td>{{v.city}}</td>
+                <td>{{v.state}}</td>
+                <td>{{v.zip}}</td>
+                 <td>{{v.phone}}</td>
+                 <td>{{v.email}}</td>
 
-            <td>
-                <a routerLink="/vendors/detail/{{v.id}}">Detail</a> |
-                <a routerLink="/vendors/edit/{{v.id}}">Edit</a>
-            </td>
-        </tr>
+                <td>
+                     <a routerLink="/vendors/detail/{{v.id}}">Detail</a> |
+                     <a routerLink="/vendors/edit/{{v.id}}">Edit</a>
+                 </td>
+                </tr>
+            </ng-template>
     </table>
 </div>
 

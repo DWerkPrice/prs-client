@@ -11,15 +11,20 @@ import { Vendor } from '../vendor.class';
 export class VendorDetailComponent implements OnInit {
 
   vendor: Vendor = new Vendor();
+  isHidden: boolean = true;
+
+  VerifyDelete() {
+    this.isHidden = false;
+  }
 
   delete(): void{
     this.vendorsvc.remove(this.vendor).subscribe(
       res => {
         console.debug("Vendor delete successful!",res);
-        this.router.navigateByUrl("/vendor/list");
+        this.router.navigateByUrl("/vendors/list");
       },
       err => {
-        console.error("User delete failed",err);
+        console.error("vendors delete failed",err);
       }
     );
   }

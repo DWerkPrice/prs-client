@@ -21,12 +21,11 @@
             <td>{{u.isAdmin}}</td>
             <td>
                   <a routerLink="/users/detail/{{u.id}}">Detail</a> |
-                  <a routerLink="/users/edit/{{u.id}}">Edit</a> |
-                  <a>{{this.sortCol}}</a>
+                  <a routerLink="/users/edit/{{u.id}}">Edit</a> 
             </td>
          </tr>
-        </div>
-        <ng-template #elseTemplate>
+        </div> 
+        <ng-template #elseTemplate class = "table table-sm ">
             <tr *ngFor="let u of users | userSearch: searchCriteria | sortd: sortCol">
             <td>{{u.firstname}} {{u.lastname}}</td>
             <td>{{u.phone}}</td>
@@ -35,8 +34,7 @@
             <td>{{u.isAdmin}}</td>
             <td>
                   <a routerLink="/users/detail/{{u.id}}">Detail</a> |
-                  <a routerLink="/users/edit/{{u.id}}">Edit</a> |
-                  <a>{{this.sortCol}}</a>
+                  <a routerLink="/users/edit/{{u.id}}">Edit</a> 
             </td>
          </tr>
          </ng-template>
