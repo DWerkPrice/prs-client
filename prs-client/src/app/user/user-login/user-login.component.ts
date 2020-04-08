@@ -26,6 +26,7 @@ export class UserLoginComponent implements OnInit {
         this.message = "UserName/PassWord not found";       
         console.error("Invalid", err);
         this.systemsvc.loggedInUser = null;
+        this.router.navigateByUrl("/users/login")
         }
   );
   }

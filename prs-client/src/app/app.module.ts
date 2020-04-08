@@ -35,6 +35,7 @@ import { SortdPipe } from './pipes/sortd.pipe';
 import { PrsAboutComponent } from './prs/prs-about/prs-about.component';
 import { PrsHomeComponent } from './prs/prs-home/prs-home.component';
 import { RequestReviewComponent } from './request/request-review/request-review.component';
+import { RequestItemComponent } from './request/request-item/request-item.component';
 
 
 @NgModule({
@@ -73,7 +74,8 @@ import { RequestReviewComponent } from './request/request-review/request-review.
     SortdPipe,
     PrsAboutComponent,
     PrsHomeComponent,
-    RequestReviewComponent
+    RequestReviewComponent,
+    RequestItemComponent
   ],
   imports: [
     BrowserModule,

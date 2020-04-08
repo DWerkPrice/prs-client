@@ -20,7 +20,7 @@ export class RequestDetailComponent implements OnInit {
 
     this.requestsvc.change(this.request).subscribe(
       res =>{
- //        console.debug("Review change successful!", res);
+        console.debug("Review change successful!", res);
  //       console.log("this router:", this.router);
       this.router.navigateByUrl("requests/list");
       },

@@ -12,6 +12,11 @@ export class RequestService {
   list(): Observable<Request[]>{
     return this.http.get(`${url}`) as Observable<Request[]>;
   }
+
+  returnStatReview(): Observable<Request[]>{
+    return this.http.get(`${url}/returnstatreview`) as Observable<Request[]>;
+  }
+
   get(id: any): Observable<Request>{
     return this.http.get(`${url}/${id}`) as Observable<Request>;
   }

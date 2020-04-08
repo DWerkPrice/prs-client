@@ -1,0 +1,46 @@
+<app-menu></app-menu> 
+<Label>Request Review Item </Label> 
+        <div class="component">
+        <table class="table table-sm">
+            <tr>
+                <th>Description</th>
+                <th>Status</th>
+                <th>Total</th>
+                <th>User</th>
+            </tr>
+
+            <tr>
+                <td>{{request.description}}</td>
+                <td>{{request.status}}</td>
+                <td>{{request.total}}</td>
+                <td>{{request.user.username}}</td>
+            </tr>
+        </table>
+        
+    <table class="table table-sm">
+        <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Total</th>
+        </tr>
+        <tr *ngFor="let rl of request.requestLines">
+            <td>{{rl.product.name}}</td>
+            <td>{{rl.quantity}}</td>
+            <td>{{rl.product.price}}</td>
+            <td>{{rl.product.price*rl.quantity | currency}}</td>
+            <td>
+         </tr>
+        </table>
+    <!--        <div>-->
+                <button (click)="approved()" class="btn btn-info">Approved</button>|
+                <button (click)="rejectverify()" class="btn btn-danger">Reject</button>
+             <!--   <span [hidden]="ishidden">  -->
+                     <input [(ngModel)]="request.rejectionReason" type="text" size="20">
+                     <button [hidden]="ishidden" (click)="rejected()" class="btn-danger">Verify Reject</button> 
+            <!--    </span>
+            </div>        -->
+   
+
+</div>  
+

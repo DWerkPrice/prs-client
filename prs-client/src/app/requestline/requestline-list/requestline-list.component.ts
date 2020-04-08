@@ -1,4 +1,4 @@
-import { Component, OnInit, ɵɵcontainerRefreshEnd } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RequestService } from 'src/app//request/request.service';
 import { SystemService } from 'src/app/system.service';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -17,9 +17,9 @@ export class RequestlineListComponent implements OnInit {
 
   request: Request;
   requestLine = new RequestLine();
-  requestLineId: number = 0
+  requestLineId: number = 0;
 
-  searchCriteria: string = '';
+  //searchCriteria: string = '';
   
 
   
@@ -52,7 +52,7 @@ export class RequestlineListComponent implements OnInit {
 
 
   constructor(
-//    private route: ActivatedRoute,
+    private route: ActivatedRoute,
     private systemsvc: SystemService,
     private requestsvc: RequestService,
     private requestlinesvc: RequestLineService,
@@ -64,7 +64,7 @@ export class RequestlineListComponent implements OnInit {
     this.requestsvc.get(id).subscribe(
       res => {
         this.request = res;
-        console.debug("Request:", res);
+        console.debug("Requestline-list:", res);
       },
       err => {
       console.error("Error debug request get",err);

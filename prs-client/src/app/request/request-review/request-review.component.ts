@@ -19,7 +19,7 @@ export class RequestReviewComponent implements OnInit {
   displayRequestlines(id: string) {
     this.systemsvc.requestId  = Number(id);
     console.log("Request id",id,this.systemsvc.requestId);
-    this.router.navigateByUrl("/requestlines/list"); 
+    this.router.navigateByUrl("/requests/item"); 
   }
     
 
@@ -31,10 +31,10 @@ export class RequestReviewComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.request.list().subscribe(
+    this.request.returnStatReview().subscribe(
       res => {
         this.requests = res;
-        console.debug("Request-list: ",res);
+        console.debug("Request-Review: ",res);
       },
       err => {
         console.error("Error reading request", err)

@@ -1,8 +1,6 @@
 <app-menu></app-menu> 
    
-    <Label> Request List </Label> |
-    <a routerLink="/requests/create">Create</a> |
-    <input [(ngModel)] ="searchCriteria" type = "text" placeholder="Search">
+    <Label> Request Review List </Label> |
     <div class="component">
         <table class="table table-sm">
             <tr>
@@ -16,7 +14,7 @@
                 <th> </th>
                 <th>Actions</th>
             </tr>
-            <tr *ngFor="let r of requests | requestSearch: searchCriteria" > 
+            <tr *ngFor="let r of requests " > 
               <!--  <div *ngif="r.userId=systemsvc.userId"> -->
                      <td> </td>
                      <td>{{r.description}}</td>
@@ -25,13 +23,13 @@
                     <td>{{r.status}}</td>
                     <td class="row_data">{{r.total | currency}}</td>
                     <td class="row_data">{{r.userId != null ? r.user.username: "Invalid UserId"}}</td>
-                    <td> </td>
+                    <td></td>
                     <td>
-                        <a routerLink="/requests/detail/{{r.id}}">Detail</a> |
-                        <a routerLink="/requests/edit/{{r.id}}" >Edit</a> |
-                        <a (click)="displayRequestlines(r.id)" style="color:rgb(0, 121, 221);">Line</a>
+                        <a (click)="displayRequestlines(r.id)" style="color:rgb(0, 121, 221);">Review</a>
+        <!--                <a routerLink="/requests-item//{{r.id}}">Review</a> -->
+
                     </td>
-                <!-- </div> -->
+        <!--    </div>-->
             </tr>
     
         </table>

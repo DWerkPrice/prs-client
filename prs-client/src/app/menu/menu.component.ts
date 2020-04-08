@@ -17,8 +17,8 @@ export class MenuComponent implements OnInit {
     new Menu("Vendors","/vendors/list","Vendor list page"),
     new Menu("Products","/products/list","Product list page"),
     new Menu("Requests","/requests/list","Request list page"),
-    new Menu("Review","/requests/list","Review list page"),
-    new Menu("PRS About","/prs/about","PRS about page"),
+    new Menu("Review","/requests/review","Request review page"),
+    new Menu("PRS About","/prs/about","About page"),
     new Menu("Login","/users/login/''/''","Users login page")
   ]
   loguser = this.systemsvc.loggedInUser.username

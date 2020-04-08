@@ -2,7 +2,7 @@
 <app-menu></app-menu>
 <div class="component">
 
-    <table class="table table-sm table-striped">
+    <table class="table table-sm table table-striped">
 
         <tr>
             <td>Id</td>
@@ -22,12 +22,12 @@
                 <input [(ngModel)]="request.justification" type="text" >
             </td>
         </tr>
-        <tr>
+  <!--      <tr>
             <td>Rejection Reason</td>
             <td>
                 <input [(ngModel)]="request.rejectionReason" type="text" >
             </td>
-        </tr>
+        </tr>-->
         <tr>
             <td>Delivery Mode</td>
             <td>
@@ -49,7 +49,7 @@
         <tr>
             <td>UserName</td>
             <td>
-                <inupt [(ngModel)]=request.user.username" type="text disabled">
+                <input [(ngModel)]="request.user.username" type="text" disabled>
             </td>
         </tr>
         <tr>
